@@ -1,21 +1,38 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+
+from .models import ArticleAbout
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    output = ', '.join([q.question_text for q in latest_question_list])
-    return HttpResponse(output)
+    return render(request, 'index.html')
 
 
-def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+def about(request):
+    return render(request, 'about.html')
 
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+def about_article(request, pk):
+    article = get_object_or_404(ArticleAbout, pk=pk)
+    return render(request, 'about.html', {'article': article})
 
 
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+def commemoration(request):
+    return render(request, 'commemoration.html')
+
+
+def contacts(request):
+    return render(request, 'contacts.html')
+
+
+def events(request):
+    return render(request, 'events.html')
+
+
+def events_article(request):
+    article = get_object_or_404(ArticleAbout, pk=pk)
+    return render(request, 'events.html', {'article': article})
+
+
+def schedule(request):
+    return render(request, 'schedule.html')

@@ -37,8 +37,7 @@
 	   });
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/62280157" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->	
-</head>
+	<!-- /Yandex.Metrika counter -->	</head>
 
 
 
@@ -48,7 +47,7 @@
 
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg fixed-top ">
-	<a class="navbar-brand active" href="index.html">Свято-Троицкий собор города Колпино</a>
+	<a class="navbar-brand" href="index.html">Свято-Троицкий собор города Колпино</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 	</button>
@@ -56,7 +55,7 @@
 	<div class="collapse navbar-collapse " id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-4">	      
 	    	<li class="nav-item"><a class="nav-link " href="about.html">О соборе</a></li>
-			<li class="nav-item"><a class="nav-link " href="commemoration.html">Подать записку</a></li>
+			<li class="nav-item active"><a class="nav-link " href="commemoration.html">Подать записку</a></li>
 			<li class="nav-item"><a class="nav-link " href="events.html">События</a></li>
 			<li class="nav-item"><a class="nav-link " href="schedule.html">Расписание</a></li>
 			<li class="nav-item"><a class="nav-link " href="contacts.html">Контакты</a></li>
@@ -66,24 +65,73 @@
 
 
 
-<!-- header -->
-<header class="header ">
-	<div class="overlay"></div>
+<header>
+<!-- about section -->
+<div class="memorial" id="memorial">
 	<div class="container">
-	  	<div class="description ">
-			<h1>
-	 		Свя́то-Тро́ицкий собо́р г. Колпино
-	  		<p>
-	  		Свя́то-Тро́ицкий собо́р — православный храм в г. Колпино (Санкт-Петербург), на берегу реки Ижоры. Является преемником одноимённого разрушенного в 1958 году собора.</p>
-	  		<p>
-			Храм относится к Санкт-Петербургской епархии Русской Православной Церкви, является центром Колпинского благочиннического округа. Настоятель — протоиерей Александр Селиванов.</p>
-			<!--  		<button class="btn btn-outline-secondary btn-lg">Подробнее</button> -->
-			</h1>
+	  <h1 class="text-center">Поминовение на службах</h1>
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="images/pray_500_500.jpg" class="img-fluid">
+
+			</div>
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<p>
+					На этой странице Вы можете заказать поминовение о здравии и упокоении.
+				</p>
+				<p>
+					Православные христиане, чьи имена занесены в присланные Вами записки, будут поминаться при совершении Божественной литургии, на молебнах и панихидах.
+				</p>
+				<p>
+					Чтобы заказать поминовение, прежде всего, Вам нужно выбрать, какое необходимо совершать поминовение: о здравии или об упокоении и указать, во время какой службы следует молитвенно поминать Ваших близких.
+				</p>
+			</div>
 		</div>
 	</div>
+</div>
 </header>
 
 
+<!-- Форма для отправки записок о поминовении. Вариант №1
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<div class="stepform_fa7PPl1 rnd_242638074"></div>
+		</div>
+	</div>
+	<script>
+	    (function(s, t, e, p, f, o, r, m) {
+	        s[t] = s[t] || {};
+	        s[t][242638074] = {
+	            id: "fa7PPl1",
+	            rnd: 242638074
+	        };
+	        e.async = true;
+	        e.src = p + f;
+	        document[m](o)[r](e)
+	    }(window,"stepFORM_params",document.createElement("script"),document.location.protocol==="https:"?"https:":"http:","//app.stepform.io/api.js?id=fa7PPl1","head","appendChild","querySelector"));
+	</script>
+</div>
+-->
+
+<!-- Форма для отправки записок о поминовении. Вариант №2 -->
+<div class="stepform_fa7PPl1 rnd_254022198"></div>
+<script>
+    (function(s, t, e, p, f, o, r, m) {
+        s[t] = s[t] || {};
+        s[t][254022198] = {
+            id: "fa7PPl1",
+            rnd: 254022198
+        };
+        e.async = true;
+        e.src = p + f;
+        document[m](o)[r](e)
+    }(window,"stepFORM_params",document.createElement("script"),document.location.protocol==="https:"?"https:":"http:","//app.stepform.io/api.js?id=fa7PPl1","head","appendChild","querySelector"));
+</script>
+
+
+
+<!-- footer -->
 <footer class="footer">
 	<div class="container bottom_border">
         <div class="row">
@@ -175,6 +223,8 @@
         <!--social_footer_ul ends here-->
     </div>
 </footer>
+
+
 
 <!-- add Javasscript file from js file -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
