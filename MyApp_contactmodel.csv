@@ -1,0 +1,19 @@
+id,title,address,phone,email,vkontakte,instagram,map_code,menu_title
+1,Свято-Троицкий собор,"189630, Санкт-Петербург, г. Колпино, ул. Адмиралтейская, д. 42.",+7 (812) 482-18-22,sobor-kolpino@yandex.ru,svyato_troicki_prihod,troickoe_podvorie,"<script
+		type=""text/javascript""
+		charset=""utf-8""
+		async
+		src=""https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afcb4d1679308a0c3cd00d18e7ced0b708b1dbb7de2d0c8af409f3c9d147768ce&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"">
+	</script>",Свято-Троицкий собор
+2,Церковь святителя Николая Чудотворца,"196657, Санкт-Петербург, г. Колпино, ул. Пролетарская, д. 2.",,,,,"<script
+		type=""text/javascript""
+		charset=""utf-8""
+		async
+		src=""https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad0e7164fa3248db5d25bfbc1f4381039c457ba7cedf8d0513dac63fa2ae6e42d&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"">
+	</script>",Церковь святителя Николая Чудотворца
+3,Часовня Тихвинской иконы Божией Матери при Колпинском больничном комплексе,"188643, Санкт-Петербург, г. Колпино, ул. Павловская, д. 12.",+7 (812) 482-18-22,,,,"<script
+		type=""text/javascript""
+		charset=""utf-8""
+		async
+		src=""https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A64916dfefba73fdaf4e58b7944b062d49c31c3c754f7a2a3f0506056b1e4fdec&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"">
+	</script>",Часовня Тихвинской иконы Божией Матери

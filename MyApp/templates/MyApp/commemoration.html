@@ -1,237 +1,184 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>Свято-Троицкий cобор города Колпино</title>
-	
-	<!-- add bootstrap css file -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-
-    <!-- add favicon -->
-    <link rel="shortcut icon" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
+{% extends 'base.html' %}
+{% load static %}
 
 
-	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
-	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-	   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-	   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-	   ym(62280157, "init", {
-	        clickmap:true,
-	        trackLinks:true,
-	        accurateTrackBounce:true,
-	        webvisor:true
-	   });
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/62280157" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->	</head>
+{% block nav-commemoration %}<li class="nav-item active"><a class="nav-link " href="/commemoration">Подать записку</a></li>{% endblock %}
 
 
-
-<body>
-
-
-
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg fixed-top ">
-	<a class="navbar-brand" href="index.html">Свято-Троицкий собор города Колпино</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse " id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-4">	      
-	    	<li class="nav-item"><a class="nav-link " href="about.html">О соборе</a></li>
-			<li class="nav-item active"><a class="nav-link " href="commemoration.html">Подать записку</a></li>
-			<li class="nav-item"><a class="nav-link " href="events.html">События</a></li>
-			<li class="nav-item"><a class="nav-link " href="schedule.html">Расписание</a></li>
-			<li class="nav-item"><a class="nav-link " href="contacts.html">Контакты</a></li>
-	    </ul>
-	</div>
-</nav>
-
-
-
-<header>
-<!-- about section -->
+{% block content %}
 <div class="memorial" id="memorial">
-	<div class="container">
-	  <h1 class="text-center">Поминовение на службах</h1>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<img src="images/pray_500_500.jpg" class="img-fluid">
-
-			</div>
-			<div class="col-lg-8 col-md-8 col-sm-12 desc">
-				<p>
-					На этой странице Вы можете заказать поминовение о здравии и упокоении.
-				</p>
-				<p>
-					Православные христиане, чьи имена занесены в присланные Вами записки, будут поминаться при совершении Божественной литургии, на молебнах и панихидах.
-				</p>
-				<p>
-					Чтобы заказать поминовение, прежде всего, Вам нужно выбрать, какое необходимо совершать поминовение: о здравии или об упокоении и указать, во время какой службы следует молитвенно поминать Ваших близких.
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-</header>
-
-
-<!-- Форма для отправки записок о поминовении. Вариант №1
-<div class="container">
-	<div class="row">
-		<div class="col-sm">
-			<div class="stepform_fa7PPl1 rnd_242638074"></div>
-		</div>
-	</div>
-	<script>
-	    (function(s, t, e, p, f, o, r, m) {
-	        s[t] = s[t] || {};
-	        s[t][242638074] = {
-	            id: "fa7PPl1",
-	            rnd: 242638074
-	        };
-	        e.async = true;
-	        e.src = p + f;
-	        document[m](o)[r](e)
-	    }(window,"stepFORM_params",document.createElement("script"),document.location.protocol==="https:"?"https:":"http:","//app.stepform.io/api.js?id=fa7PPl1","head","appendChild","querySelector"));
-	</script>
-</div>
--->
-
-<!-- Форма для отправки записок о поминовении. Вариант №2 -->
-<div class="stepform_fa7PPl1 rnd_254022198"></div>
-<script>
-    (function(s, t, e, p, f, o, r, m) {
-        s[t] = s[t] || {};
-        s[t][254022198] = {
-            id: "fa7PPl1",
-            rnd: 254022198
-        };
-        e.async = true;
-        e.src = p + f;
-        document[m](o)[r](e)
-    }(window,"stepFORM_params",document.createElement("script"),document.location.protocol==="https:"?"https:":"http:","//app.stepform.io/api.js?id=fa7PPl1","head","appendChild","querySelector"));
-</script>
-
-
-
-<!-- footer -->
-<footer class="footer">
-	<div class="container bottom_border">
-        <div class="row">
-           <div class="col-lg-3 col-md-6 col-sm-6 col">
-				<h5 class="headin5_amrc col_white_amrc pt2">Где мы</h5>
-				<!--headin5_amrc-->
-				<p class="mb10">Россия, Санкт-Петербург</p>
-				<p>г. Колпино, ул. Адмиралтейская, д. 42</p>
-				<p>+7 (812) 482-18-22</p>
-				<p>sobor-kolpino@yandex.ru</p>
-				<p>vk.com/svyato_troicki_prihod</p>
-           </div>
-           <div class="col-lg-3 col-md-6 col-sm-6 col">
-				<h5 class="headin5_amrc col_white_amrc pt2">Службы</h5>
-				<!--headin5_amrc ends here-->
-				<ul class="footer_ul2_amrc">
-					<li>
-						<p>
-							<b>Воскресенье и праздники:</b><br>
-							Божественная литургия в 7:00<br>
-							Божественная литургия в 10:00
-						</p>
-					</li>
-					<li>
-						<p>
-							<b>Суббота:</b><br>
-							Божественная литургия в 10:00
-						</p>
-					</li>
-					<li>
-						<p>
-							<b>Будние дни:</b><br>
-							Божественная литургия в 9:00
-						</p>
-					</li>
-					<li>
-						<p>Подробнее в разделе <a href="schedule.html"><b>Расписание</b></a></p>
-					</li>				</ul>
-				<!--footer_ul2_amrc ends here-->
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<h5 class="headin5_amrc col_white_amrc pt2">Записки online</h5>
-				<!--headin5_amrc-->
-				<ul class="footer_ul2_amrc">
-					<li><p>Вы можете подать записку для поминовения о здравии или об упокоении на сайте.</p></li>
-					<li><p>Специальная форма доступна в разделе <a href="commemoration.html"><b>Подать записку</b></a></p></li>
-				</ul>
-				<!--footer_ul_amrc ends here-->
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 ">
-				<h5 class="headin5_amrc col_white_amrc pt2">Последние публикации</h5>
-				<!--headin5_amrc-->
-				<ul class="footer_ul_amrc">
-					<li class="media">
-						<div class="media-body">
-							<span>30 апреля 2019</span>
-							<p><a href="events/event-1-2.html">Из тьмы к свету</a></p>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-body">
-							<span>24 декабря 2018</span>
-							<p><a href="events/event-1-3.html">Особая комната для особых детей</a></p>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-body">
-							<span>23 июня 2018</span>
-							<p><a href="events/event-2-1.html">Митрополит Варсонофий совершил Всенощное бдение в Свято-Троицком соборе Колпино</a></p>
-						</div>
-					</li>
-				</ul>
-				<!--footer_ul_amrc ends here-->
-			</div>
-		</div>
-	</div>
     <div class="container">
-        <div class="footer-logo">
-			<img src="images/logo-bottom-white.png" alt="" />
-		</div>
-        <!--footer_bottom_ul_amrc ends here-->
-        <p class="copyright text-center">
-        	Официальный сайт Свято-Троицкого собора г. Колпино
-        </p>
-        <ul class="social_footer_ul">
-			<li><a href="https://www.instagram.com/troickoe_podvorie/"><img src="images/instagram_small_grey.png" alt="" width="30px" height="30px" /></a></li>
-			<li><a href="https://vk.com/svyato_troicki_prihod"><img src="images/vk_small_grey.png" alt="" width="30px" height="30px" /></a></li>
-        </ul>
-        <!--social_footer_ul ends here-->
+        <h1 class="text-center">Записки о поминовении</h1>
+        <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-0"></div>
+            <div class="col-lg-6 col-md-8 col-sm-12">
+
+
+
+                <form action="{% url 'comm_payment' %}" method="post">
+
+                    {% csrf_token %}
+
+                    <div class="invalid-feedback">
+                        {{ form.non_field.errors }}
+                    </div>
+
+                    <div class="form-row mb-5">
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="{{ form.service.id_for_label }}"><h4>Служба</h4></label>
+                                <div class="invalid-feedback">
+                                    {{ form.service.errors }}
+                                </div>
+
+                                {% for radio in form.service %}
+                                <div class="form-check">
+                                    {{ radio.tag }}
+                                    <label class="form-check-label" for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="{{ form.duration.id_for_label }}"><h4>Продолжительность</h4></label>
+                                <div class="invalid-feedback">
+                                    {{ form.duration.errors }}
+                                </div>
+
+                                {% for radio in form.duration %}
+                                <div class="form-check">
+                                    {{ radio.tag }}
+                                    <label class="form-check-label" for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+{% comment %}
+                    <div class="form-row mb-5">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="service_radios_1"><h4>Служба</h4></label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service_radios" id="service_radios_1" value="proscomid">
+                                    <label class="form-check-label" for="service_radios_1">
+                                        Сорокоуст (проскомидия)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service_radios" id="service_radios_2" value="moleben">
+                                    <label class="form-check-label" for="service_radios_2">
+                                        Молебное пение
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="service_radios" id="service_radios_3" value="requiem">
+                                    <label class="form-check-label" for="service_radios_3">
+                                        Панихида
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="duration_radios_1"><h4>Продолжительность</h4></label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="duration_radios" id="duration_radios_1" value="1_day">
+                                    <label class="form-check-label" for="duration_radios_1">
+                                        Проскомидия (один день)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="duration_radios" id="duration_radios_2" value="40_days">
+                                    <label class="form-check-label" for="duration_radios_2">
+                                        40 дней
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="duration_radios" id="duration_radios_3" value="6_months">
+                                    <label class="form-check-label" for="duration_radios_3">
+                                        6 месяцев
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="duration_radios" id="duration_radios_4" value="1_year">
+                                    <label class="form-check-label" for="duration_radios_4">
+                                        1 год
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endcomment %}
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="text-center">Имена для поминовения</h4>
+                        <hr>
+                        <p>В записке на Сорокоуст продолжительностью 40 дней и более необходимо указать <b>Имя и Фамилию</b>.</p>
+                    </div>
+
+                    <div class="form-row mb-5">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="col_1"><h5>О здравии</h5></label>
+                                <input type="text" class="form-control mb-2" id="col_1">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="col_2"><h5>Об упокоении</h5></label>
+                                <input type="text" class="form-control mb-2" id="col_2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                                <input type="text" class="form-control mb-2">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-auto my-1">
+                        <button
+                                type="submit"
+                                class="btn btn-primary btn-lg btn-block">
+
+                            Отправить записку
+
+                        </button>
+                    </div>
+
+                </form>
+
+
+
+
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-0"></div>
+        </div>
+
     </div>
-</footer>
+</div>
 
-
-
-<!-- add Javasscript file from js file -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src='js/main.js'></script>
-
-<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+{% endblock %}

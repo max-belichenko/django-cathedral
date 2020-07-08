@@ -1,245 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>Свято-Троицкий cобор города Колпино</title>
-	
-	<!-- add bootstrap css file -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-
-    <!-- add favicon -->
-    <link rel="shortcut icon" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
+{% extends 'base.html' %}
+{% load static %}
 
 
-	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
-	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-	   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-	   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-	   ym(62280157, "init", {
-	        clickmap:true,
-	        trackLinks:true,
-	        accurateTrackBounce:true,
-	        webvisor:true
-	   });
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/62280157" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->	</head>
+{% block nav-contacts %}<li class="nav-item active"><a class="nav-link" href="/contacts">Контакты</a></li>{% endblock %}
 
 
-
-<body>
-
-
-
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg fixed-top ">
-	<a class="navbar-brand" href="index.html">Свято-Троицкий собор города Колпино</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse " id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-4">	      
-	    	<li class="nav-item"><a class="nav-link " href="about.html">О соборе</a></li>
-			<li class="nav-item"><a class="nav-link " href="commemoration.html">Подать записку</a></li>
-			<li class="nav-item"><a class="nav-link " href="events.html">События</a></li>
-			<li class="nav-item"><a class="nav-link " href="schedule.html">Расписание</a></li>
-			<li class="nav-item active"><a class="nav-link " href="contacts.html">Контакты</a></li>
-	    </ul>
-	</div>
-</nav>
-
-
-
-<!-- contacts section -->
-<div class="about" id="contacts">
+{% block header %}
+<header class="about" id="contacts">
 	<div class="container">
-	  <h1 class="text-center">Контактные данные</h1>
-		<div class="row">
-			<!--<div class="col-lg-8 col-md-8 col-sm-12 desc">-->
-				<div class="col-sm desc">
-						<table border="0" cellpadding="7" width="100%" align="top">
-							<tr>
-								<td colspan="2"><h3>Свято-Троицкий собор</h3></td>
-								<td rowspan="5"><a href="images/sobor-large.jpg" target="_blank"><img src="images/sobor-small.jpg" align=right alt=""></a></td>
-							</tr>
-							<tr>
-								<td>Адрес:</td>
-								<td><b>189630, Санкт-Петербург, г. Колпино, ул. Адмиралтейская, д. 42.</b></td>
-							</tr>
-							<tr>
-								<td>Телефон:</td>
-								<td><b>+7 (812) 482-18-22</b></td>
-							</tr>
-							<tr>
-								<td>Электронная почта:</td>
-								<td><b>sobor-kolpino@yandex.ru</b></td>
-							</tr>
-							<tr>
-								<td>Группа Vkontakte:</td>
-								<td><a href="https://vk.com/svyato_troicki_prihod"><b>vk.com/svyato_troicki_prihod</b></a></td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afcb4d1679308a0c3cd00d18e7ced0b708b1dbb7de2d0c8af409f3c9d147768ce&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-								</td>
-							</tr>
-						</table>
-						<br>
-						<br>
-						<br>
-						<table border="0" cellpadding="7" width="100%" align="top">
-							<tr align="top">
-								<td colspan="2" align="top"><h3>Церковь святителя Николая Чудотворца</h3></td>
-								<td rowspan="2" align="top"><a href="images/cerkov-large.jpg" target="_blank"><img src="images/cerkov-small.jpg" align=right alt=""></a></td>
-							</tr>
-							<tr align="top">
-								<td>Адрес:</td>
-								<td><b>196657, Санкт-Петербург, г. Колпино, ул. Пролетарская, д. 2.</b></td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad0e7164fa3248db5d25bfbc1f4381039c457ba7cedf8d0513dac63fa2ae6e42d&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-								</td>
-							</tr>
-						</table>
-						<br>
-						<br>
-						<br>
-						<table border="0" cellpadding="7" width="100%" align="top">
-							<tr align="top">
-								<td colspan="2" align="top"><h3>Часовня Тихвинской иконы Божией Матери<br>при Колпинском морге</h3></td>
-								<td rowspan="2" align="top"><a href="images/chasovnya-large.jpg" target="_blank"><img src="images/chasovnya-small.jpg" align=right alt=""></a></td>
-							</tr>
-							<tr align="top">
-								<td>Адрес:</td>
-								<td><b>188643, Санкт-Петербург, г. Колпино, ул. Павловская, д. 12.</b></td>
-							</tr>
-							<tr>
-								<td colspan="3">
-									<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A64916dfefba73fdaf4e58b7944b062d49c31c3c754f7a2a3f0506056b1e4fdec&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-								</td>
-							</tr>
-						</table>
-			</div>
-		</div>
+		<h1 class="text-center">Контактные данные</h1>
+		{% if contacts %}
+		<ul class="nav justify-content-center">
+			{% for contact in contacts %}
+			<li class="nav-item">
+				<a class="nav-link" href="#{{ contact.pk }}">{{ contact.menu_title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+{% for contact in contacts %}
+<a name="{{ contact.pk }}"></a>
+<br>
+<br>
+<br>
+<div class="container">
+	<table class="table table-borderless">
+		<thead>
+			<tr>
+				<th scope="col" colspan="2"><h3>{{ contact.title }}</h3></th>
+			</tr>
+		</thead>
+		<tbody>
+
+		{% if contact.address %}
+		<tr>
+			<th scope="row">Адрес:</th>
+			<td>{{ contact.address }}</td>
+		</tr>
+		{% endif %}
+
+		{% if contact.phone %}
+		<tr>
+			<th scope="row">Телефон:</th>
+			<td>{{ contact.phone }}</td>
+		</tr>
+		{% endif %}
+
+		{% if contact.email %}
+		<tr>
+			<th scope="row">Электронная почта:</th>
+			<td>{{ contact.email }}</td>
+		</tr>
+		{% endif %}
+
+		{% if contact.vkontakte %}
+		<tr>
+			<th scope="row">Группа Vkontakte:</th>
+			<td><a href="https://vk.com/{{ contact.vkontakte }}">vk.com/{{ contact.vkontakte }}</a></td>
+		</tr>
+		{% endif %}
+
+		{% if contact.instagram %}
+		<tr>
+			<th scope="row">Инстаграм</th>
+			<td><a href="https://www.instagram.com/{{ contact.instagram }}/">@{{ contact.instagram }}</a></td>
+		</tr>
+		{% endif %}
+
+		</tbody>
+	</table>
+
+	{% if contact.map_code %}
+	{{ contact.map_code|safe }}
+	{% endif %}
+
+</div>
+{% endfor %}
+
+<div class="about">
+	<div class="container">
 	</div>
 </div>
-
-<footer class="footer">
-	<div class="container bottom_border">
-        <div class="row">
-           <div class="col-lg-3 col-md-6 col-sm-6 col">
-				<h5 class="headin5_amrc col_white_amrc pt2">Где мы</h5>
-				<!--headin5_amrc-->
-				<p class="mb10">Россия, Санкт-Петербург</p>
-				<p>г. Колпино, ул. Адмиралтейская, д. 42</p>
-				<p>+7 (812) 482-18-22</p>
-				<p>sobor-kolpino@yandex.ru</p>
-				<p>vk.com/svyato_troicki_prihod</p>
-           </div>
-           <div class="col-lg-3 col-md-6 col-sm-6 col">
-				<h5 class="headin5_amrc col_white_amrc pt2">Службы</h5>
-				<!--headin5_amrc ends here-->
-				<ul class="footer_ul2_amrc">
-					<li>
-						<p>
-							<b>Воскресенье и праздники:</b><br>
-							Божественная литургия в 7:00<br>
-							Божественная литургия в 10:00
-						</p>
-					</li>
-					<li>
-						<p>
-							<b>Суббота:</b><br>
-							Божественная литургия в 10:00
-						</p>
-					</li>
-					<li>
-						<p>
-							<b>Будние дни:</b><br>
-							Божественная литургия в 9:00
-						</p>
-					</li>
-					<li>
-						<p>Подробнее в разделе <a href="schedule.html"><b>Расписание</b></a></p>
-					</li>				</ul>
-				<!--footer_ul2_amrc ends here-->
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<h5 class="headin5_amrc col_white_amrc pt2">Записки online</h5>
-				<!--headin5_amrc-->
-				<ul class="footer_ul2_amrc">
-					<li><p>Вы можете подать записку для поминовения о здравии или об упокоении на сайте.</p></li>
-					<li><p>Специальная форма доступна в разделе <a href="commemoration.html"><b>Подать записку</b></a></p></li>
-				</ul>
-				<!--footer_ul_amrc ends here-->
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 ">
-				<h5 class="headin5_amrc col_white_amrc pt2">Последние публикации</h5>
-				<!--headin5_amrc-->
-				<ul class="footer_ul_amrc">
-					<li class="media">
-						<div class="media-body">
-							<span>30 апреля 2019</span>
-							<p><a href="events/event-1-2.html">Из тьмы к свету</a></p>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-body">
-							<span>24 декабря 2018</span>
-							<p><a href="events/event-1-3.html">Особая комната для особых детей</a></p>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-body">
-							<span>23 июня 2018</span>
-							<p><a href="events/event-2-1.html">Митрополит Варсонофий совершил Всенощное бдение в Свято-Троицком соборе Колпино</a></p>
-						</div>
-					</li>
-				</ul>
-				<!--footer_ul_amrc ends here-->
-			</div>
-		</div>
-	</div>
-    <div class="container">
-        <div class="footer-logo">
-			<img src="images/logo-bottom-white.png" alt="" />
-		</div>
-        <!--footer_bottom_ul_amrc ends here-->
-        <p class="copyright text-center">
-        	Официальный сайт Свято-Троицкого собора г. Колпино
-        </p>
-        <ul class="social_footer_ul">
-			<li><a href="https://www.instagram.com/troickoe_podvorie/"><img src="images/instagram_small_grey.png" alt="" width="30px" height="30px" /></a></li>
-			<li><a href="https://vk.com/svyato_troicki_prihod"><img src="images/vk_small_grey.png" alt="" width="30px" height="30px" /></a></li>
-        </ul>
-        <!--social_footer_ul ends here-->
-    </div>
-</footer>
-
-
-
-<!-- add Javasscript file from js file -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src='js/main.js'></script>
-
-<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+{% endblock %}

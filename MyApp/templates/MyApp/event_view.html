@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block nav-events %}<li class="nav-item active"><a class="nav-link" href="/events">События</a></li>{% endblock %}
+
+
+{% block content %}
+<div class="blog">
+	<div class="container">
+		<!-------------------------------------------------------------
+			Заголовок статьи
+		-------------------------------------------------------------->
+		<h1>{{ event.title }}</h1>
+
+		<div class="row">
+			<div class="col-sm desc">
+				<!-------------------------------------------------------------
+					Аннотация к статье
+				-------------------------------------------------------------->
+				{% if event.annotation %}
+				<p class="lead">{{ event.annotation }}</p>
+				{% endif %}
+
+				<!-------------------------------------------------------------
+					Параграфы.
+					Выводятся в порядке их добавления.
+				-------------------------------------------------------------->
+				{% for paragraph in paragraphs %}
+    				<h4>{{ paragraph.title }}</h4>
+
+					{% if paragraph.photo and not paragraph.text %}
+						<img src="{{ paragraph.photo.url }}" class="img-fluid max-width: 100%;" alt="...">
+					{% else %}
+						{% if paragraph.photo %}
+						<img src="{{ paragraph.photo.url }}" class="float-right" width="300 px" alt="...">
+						{% endif %}
+						<p>{{ paragraph.text|linebreaks }}</p>
+					{% endif %}
+
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<!-------------------------------------------------------------
+			Альбом фотографий.
+			Выводятся в порядке их добавления.
+		-------------------------------------------------------------->
+		{% if photos %}
+		<div class="row">
+			{% for photo in photos %}
+			<div class="col-lg-4 col-md-4 col-sm-12 mb-4" style="overflow:hidden;">
+				<div style="overflow:hidden; min-height: 300px; min-width: 300px; background-image: url({{ photo.thumbnail.url }}); background-size:cover; background-position: center center;">
+					<a href="{{ photo.photo.url }}" data-fancybox="gallery" data-caption="{{ photo.photo }}" class="stretched-link"></a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+
+		<!-------------------------------------------------------------
+			Таблица с дополнительной информацией:
+				Дата публикации
+				Оригинал статьи - Ссылка на оригинал статьи
+				Кнопка возврата к списку событий
+		-------------------------------------------------------------->
+		<table class="table table-borderless">
+			{% if event.date %}
+			<tr>
+				<th scope="row" style="width: 1%; white-space: nowrap;">Дата события: </th>
+				<td>{{ event.date }}</td>
+			</tr>
+			{% endif %}
+			{% if event.source %}
+			<tr>
+				<th scope="row" style="width: 1%; white-space: nowrap;">Оригинал статьи: </th>
+				{% if event.source_link %}
+				<td><a href="{{ event.source_link }}" target="_blank">{{ event.source }}</a></td>
+				{% else %}
+				<td>{{ event.source }}</td>
+				{% endif %}
+			</tr>
+			{% endif %}
+			<tr>
+				<th scope="row" colspan="2" style="width: 1%; white-space: nowrap;">
+					<a class="btn btn-primary" href="{% url 'events' %}" role="button">Вернуться к списку событий</a>
+				</th>
+			</tr>
+		</table>
+	</div>
+</div>
+{% endblock %}
+

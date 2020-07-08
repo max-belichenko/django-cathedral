@@ -83,12 +83,9 @@ h1{
 /*header style*/
 .header{
 	position: relative;
-	background-image: url('../images/headerback.jpg');
-
 	background-size: cover;
 	background-position: center;
 }
-
 .overlay{
 	position: absolute;
 	min-height: 100%;
@@ -102,12 +99,16 @@ h1{
     top: 30%;
     margin: auto;
     padding: 2em;
-
+    /* Задать максимальную ширину поля. Скрывать текст, выходящий за указанную ширину.*/
+    height: 400px;	/* Уточнить при изменении высоты фонового изображения. */
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 .description h1{
 	color:#0099FF ;
 }
 .description p{
+    font-family: "Exo 2";
 	color:#666;
 	font-size: 20px;
 	width: 50%;
@@ -119,13 +120,21 @@ h1{
 	color:#fff;
 }
 .about{
-	margin: 4em 0;
+	margin: 2em 0;
 	padding: 1em;
 	position: relative;
 }
 .about h1{
 	color:#0099FF;
-	margin: 2em;
+	margin: 1em;
+}
+.about .nav-link{
+    color: #007bff;
+    text-decoration:underline;
+    text-decoration-style: dotted;
+}
+.about .nav-link:hover{
+	color: #333;
 }
 /*.about img{
 	height: 100 px;
@@ -149,8 +158,8 @@ h1{
 .about .desc p{
 	line-height:2;
 	color:#555;
+	text-indent: 25px; /* Отступ первой строки в пикселах */
 }
-
 
 
 /*Memorial*/
@@ -305,7 +314,7 @@ h1{
 	color: #ffffff;
 	font-weight: 500;
 	}
-footer p { 
+footer p {
 	font-size:13px; 
 	color:#CCC; 
 	padding-bottom:0px; 

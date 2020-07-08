@@ -1,418 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>Свято-Троицкий cобор города Колпино</title>
-	
-	<!-- add bootstrap css file -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-
-    <!-- add favicon -->
-    <link rel="shortcut icon" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-	<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
+{% extends 'base.html' %}
+{% load static %}
 
 
-	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
-	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-	   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-	   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-	   ym(62280157, "init", {
-	        clickmap:true,
-	        trackLinks:true,
-	        accurateTrackBounce:true,
-	        webvisor:true
-	   });
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/62280157" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->	</head>
+{% block nav-about %}<li class="nav-item active"><a class="nav-link" href="/about">О соборе</a></li>{% endblock %}
 
 
-
-<body>
-
-
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg fixed-top ">
-	<a class="navbar-brand" href="index.html">Свято-Троицкий собор города Колпино</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-	</button>
-
-	<div class="collapse navbar-collapse " id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-4">	      
-	    	<li class="nav-item active"><a class="nav-link " href="about.html">О соборе</a></li>
-			<li class="nav-item"><a class="nav-link " href="commemoration.html">Подать записку</a></li>
-			<li class="nav-item"><a class="nav-link " href="events.html">События</a></li>
-			<li class="nav-item"><a class="nav-link " href="schedule.html">Расписание</a></li>
-			<li class="nav-item"><a class="nav-link " href="contacts.html">Контакты</a></li>
-	    </ul>
-	</div>
-</nav>
-
-
-
-<!-- header -->
+{% block header %}
 <header class="slider-main">
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
-               <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-               <div class="carousel-item active" style="background-image: url('images/about-slider/001.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <h3>Свято-Троицкий собор</h3>
-                     <p>г. Колпино</p>
-                  </div>
-               </div>
-               <div class="carousel-item" style="background-image: url('images/about-slider/002.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-<!--                     <h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>
-               <div class="carousel-item" style="background-image: url('images/about-slider/003.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>
-               <div class="carousel-item" style="background-image: url('images/about-slider/004.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-               <div class="carousel-item" style="background-image: url('images/about-slider/005.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-               <div class="carousel-item" style="background-image: url('images/about-slider/006.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-               <div class="carousel-item" style="background-image: url('images/about-slider/007.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-               <div class="carousel-item" style="background-image: url('images/about-slider/008.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-               <div class="carousel-item" style="background-image: url('images/about-slider/009.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-               <div class="carousel-item" style="background-image: url('images/about-slider/010.jpg')">
-                  <div class="carousel-caption d-none d-md-block">
-                     <!--<h3>Служба</h3>
-                     <p>01.01.1901</p>-->
-                  </div>
-               </div>            
-           </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Предыдущий</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Следующий</span>
-            </a>
-        </div>
-    </header>
+	<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 
-<!-- about section -->
+		<ol class="carousel-indicators">
+			{% for photo in photo_slider %}
+				{% if forloop.first == True %}
+					<li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+				{% else %}
+					<li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}"></li>
+				{% endif %}
+			{% endfor %}
+		</ol>
 
-<div class="about" id="about">
-	<div class="container">
-	  <h1 class="text-center">О соборе</h1>
-		<div class="row">
-			<!--<div class="col-lg-4 col-md-4 col-sm-12">
-				<img src="images/pray_500_500.jpg" class="img-fluid">
-
-			</div>-->
-			<!--<div class="col-lg-8 col-md-8 col-sm-12 desc">-->
-				<div class="col-sm desc">
-					<a href="images/archive-photos/archive-photo-001.png" target="_blank"><img src="images/archive-photos/archive-photo-001_small.png" align=right alt=""></a>
-					<p>
-						Свято-Троицкий собор на берегу р. Ижоры является преемником одноимённого разрушенного в 1958 году собора, находившегося в г. Колпино.
-						В наши дни собор является центром Колпинского благочиннического округа. 
-					</p>
-					<p>
-					В декабре 1722 года на Ижорских пильных мельницах была заложена первая полотняная церковь святителя Николая Чудотворца, которую освятили 17 мая 1723 года. 
-					</p>
-					<p>
-					7 октября 1735 года рядом с ней была освящена деревянная церковь Святой Троицы с приделом святителя Николая Чудотворца. 
-					</p>
-					<a href="images/archive-photos/archive-photo-002.png" target="_blank"><img src="images/archive-photos/archive-photo-002_small.png" align=right alt="Старый собор Троицы Живоначальной в г. Колпино"></a>
-					<p>
-						14 августа 1758 года рядом с деревянным храмом была заложена новая каменная церковь во имя Святой Троицы с приделами Тихвинской иконы Божией Матери и святителя Николая Чудотворца. Она была освящена только в 1773 году. Автором проекта, вероятно, был С. И. Чевакинский. Храм состоял при Колпинском Ижорском заводе Морского ведомства. 
-					</p>
-					<p>
-						29 марта 1918 года церкви придан статус соборного храма. 
-					</p>
-					<p>
-						3 января 1919 года Троицкий собор стал центром Колпинский приходов, объединив все храмы города. 
-					Комплекс Троицкого собора состоял из собственно храма и отдельно стоящей к западу надвратной колокольни. В 1901 году к северу и к югу от колокольни были построены и освящены две каменные часовни. 
-					Здание собора представляло собой пятиглавую церковь, с одним доминирующим центральным куполом и четырьмя малыми, расположенными по диагоналям. 
-					Оно имело в плане форму креста. 
-					С востока была закругленная алтарная апсида. 
-					С запада на восток собор имел ширину 33,6 метра, а с севера на юг — 29,5 метра. 
-					Над центральным входом в храм в киоте из красного дерева находился образ Святой Троицы. 
-					Центральный трёхъярусный иконостас был нежно-голубого цвета с шестнадцатью позолоченными колоннами и позолоченными фигурами десяти ангелов. 
-					Каменная трёхъярусная колокольня была высотой 53 метра и выходила своим фасадом на Соборную улицу (ныне улица Урицкого). 
-					Колокола помещались на двух ярусах. 
-					Самый большой колокол был весом 8,3 тонны. 
-					Рядом помещался ещё один колокол, чуть меньше, весом 5,4 тонны. 
-					Остальные колокола помещались на нижнем ярусе, среди них находились и отлитые в XVIII веке. 
-					Колокольня Троицкой церкви являлась главной доминантой Колпино и была видна за много километров от него. 
-					По оси с этой колокольней на левом берегу Ижоры был пробит Царскосельский проспект (теперь проспект Ленина) в сторону Московского тракта (теперь Московское шоссе). 
-					</p>
-					<a href="images/archive-photos/archive-photo-003.png" target="_blank"><img src="images/archive-photos/archive-photo-003_small.png" align=right alt="Старый собор Троицы Живоначальной в г. Колпино"></a>
-					<p>
-						Главной святыней храма являлся чудотворный образ святителя Николая Чудотворца. 
-					Он находился у правого клироса в резном золоченом киоте под сенью. 
-					Явление образа произошло в 1713 году. 
-					Икона была украшена золотыми ризой и венцом с бриллиантами и драгоценными камнями. 
-					С 1797 года ежегодно с иконой проходил крестный ход от Троицкого собора к Ям-Ижорской часовне. 
-					В 1937 году после закрытия собора чудотворная икона была изъята местными властями и бесследно исчезла. 
-					До сегодняшенего дня о её судьбе так ничего и не известно. 
-					</p>
-					<p>
-						Находившаяся в 1947—2013 годах в Троицкой церкви «Кулич и Пасха» на Шлиссельбургском проспекте в Санкт-Петербурге икона свт. Николая, представляющая собой один из списков чудотворной иконы, была передана в него в декабре 1947 года жительницами Колпино Пелагеей Ивановной Пискаревой и её сестрой Параскевой, которые нашли эту икону в 1941 году на пепелище Колпинской Никольской кладбищенской церкви, сгоревшей в августе того же года в результате обстрела. 
-					</p>					<a href="images/archive-photos/archive-photo-004.png" target="_blank"><img src="images/archive-photos/archive-photo-004_small.png" align=right alt="Икона св. Николая Чудотворца в Троицкой церкви в посаде Колпино"></a>
-
-					<p>
-						13 декабря 2013 г. икона святителя Николая была перевезена из Троицкой церкви «Кулич и Пасха» в колпинский Троицкий собор, где с этого времени и находится в киоте, с южной стороны от алтаря. 
-					</p>
-					<p>
-						В июле 1932 года Президиумом Леноблисполкома была осуществлена попытка закрыть собор с последующей передачей его под нужды поликлиники. 
-					</p>
-					<p>
-						5 июня 1938 года с колокольни были сняты все остававшиеся на то время колокола. 
-					</p>
-					<p>
-						29 марта 1937 года постановлением Леноблисполкома Троицкий собор был окончательно закрыт. 
-					</p>
-					<p>
-						В 1938 году была ликвидирована церковная ограда вокруг храма. 
-					Собор был переоборудован под кинотеатр «Луч», открывшийся в сентябре. 
-					В связи с наступлением немецких войск в августе 1941 года спецгруппой НКВД была взорвана верхняя часть колокольни. 
-					После Великой Отечественной войны жители Колпино ходатайствовали о возвращении собора. 
-					Однако 10 января 1949 года Ленсовет отклонил ходатайство. 
-					</p>
-					<p>
-						5 ноября 1951 года было остановлено прошение Отдела по делам музеев и охраны памятников восстановлении собора: распоряжением Совета Министров РСФСР об исключении здания храма из списка памятников архитектуры. 
-					</p>
-					<p>
-						В 1957—1958 годах собор окончательно снесён. 
-					</p>
-					<a href="images/archive-photos/archive-photo-005.png" target="_blank"><img src="images/archive-photos/archive-photo-005_small.png" align=right alt="Вид Колпинской церкви"></a>
-					<p>
-						В 1980 году на территории, частично примыкавшей к Троицкому собору, был построен спортивный зал Ленинградского металлургического техникума, что сделало невозможным восстановление собора на прежнем месте. 
-					</p>
-					<p>
-						29 августа 1996 года в городском саду, в пределах бывшей церковной ограды, были установлены памятный деревянный «Ижорский крест», посвящённый утраченному Троицкому собору. 
-					Его открытие было приурочено к 55-летию первого обстрела Колпино. 
-					Именно этот день стал началом гибели собора. 
-					Установку осуществил Ижорский региональный общественный фонд молодёжных и военно-исторических программ «КАЧУР». 
-					</p>
-					<p>
-						Работы по возведению нового собора по проекту архитектора Сергея Игоревича Крюкова были начаты осенью 2003 года. 
-					Для строительства храма было отведено место на берегу реки Ижоры. 
-					На старом месте восстановить собор не представляется возможным по причине застроенности бывшего церковного участка. 
-					Торжественная закладка была совершена 19 декабря 2004 года благочинным Царскосельского округа протоиереем Геннадием Зверевым. 
-					Первая литургия была отслужена в престольный праздник 11 июня 2006 года в ещё строящемся соборе. 
-					</p>
-					<p>
-						В 2007 году собор был уже вчерне возведён. 
-					Начались отделочные работы. 
-					</p>
-					<p>
-						В 2009 году был установлен постоянный иконостас. 
-					Торжественное освящение главного придела собора совершил 19 декабря 2009 года епископ Петергофский Маркелл (Ветров). 
-					Правый боковой придел освящён малым чином во имя Покрова Пресвятой Богородицы. 
-					Рядом с собором построен двухэтажный церковный дом и трехэтажная церковно-приходская школа.
-					</p>
-			</div>
+		<div class="carousel-inner" role="listbox">
+			{% for photo in photo_slider %}
+				{% if forloop.first == True %}
+					<div class="carousel-item active" style="background-image: url('{{ photo.photo.url }}')">
+						{% if photo.description %}
+							<div class="carousel-caption d-none d-md-block">
+								<h3>{{ photo.description }}</h3>
+							</div>
+						{% endif %}
+					</div>
+				{% else %}
+					<div class="carousel-item" style="background-image: url('{{ photo.photo.url }}')">
+						{% if photo.description %}
+							<div class="carousel-caption d-none d-md-block">
+								<h3>{{ photo.description }}</h3>
+							</div>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endfor %}
 		</div>
+
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Предыдущая фотография</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Следующая фотография</span>
+		</a>
+
+	</div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<div class="about">
+	<div class="container">
+		{% for article in articles %}
+			{% if article.title %}
+				<h1 class="text-center">{{ article.title }}</h1>
+			{% endif %}
+
+			{% for paragraph in paragraphs %}
+				{% if paragraph.article_id == article.pk %}
+				<!-- Paragraphs -->
+				<div class="row">
+					<div class="col-sm desc">
+						{% if paragraph.image %}
+							<img class="img-fluid" src="{{ paragraph.image.url }}" align=right >
+						{% endif %}
+
+						{% if paragraph.title %}
+						<h4>{{ paragraph.title }}</h4>
+						{% endif %}
+
+						{{ paragraph.text|linebreaks }}
+
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
 	</div>
 </div>
-
-
-
-<div class="about" id="temples">
-	<div class="container">
-	  <h1 class="text-center">Приписные храмы</h1>
-		<div class="row">
-			<div class="col-sm desc">
-					<h4>Церковь святителя Николая Чудотворца</h4>
-					<a href="images/cerkov-02.jpg" target="_blank"><img src="images/cerkov-02-small.jpg" align=right alt="Церковь святителя Николая Чудотворца"></a>
-					<p>Закладка деревянного храма по проекту С. И. Крюкова состоялась 6 сентября 1997 года.</p>
-					<p>Малое освящение совершил 5 июля 1998 года её первый настоятель иерей Сергий Ромадов. </p>
-					<p>Храм — шатровый двуглавый деревянный. </p>
-					<p>Иконостас церкви представляет собой невысокую алтарную преграду. </p>
-					<p>На период строительства Свято-Троицкого собора в Никольском храме проходили практически все службы.</p>
-
-					<h4>Часовня Тихвинской иконы Божией Матери при Колпинском морге</h4>
-					<a href="images/chasovnya-large.jpg" target="_blank"><img src="images/chasovnya-small.jpg" align=right alt="Часовня Тихвинской иконы Божией Матери"></a>
-					<p>Была освящена 4 июня 1998 года протоиереем Геннадием Зверевым и предназначена для совершения отпеваний.</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="about" id="abbot">
-	<div class="container">
-	  <h1 class="text-center">Настоятель</h1>
-		<div class="row">
-			<div class="col-sm desc">
-					<h4>Протоиерей Александр Селиванов – настоятель</h4>
-					<a href="images/abbot.jpg" target="_blank"><img src="images/abbot-small.jpg" align=right alt="Протоиерей Александр Селиванов"></a>
-					<p>Родился 12 ноября 1966 г. в г. Ленинграде. </p>
-					<p>В 1989 г. окончил Санкт-Петербургскую государственную академию ветеринарной медицины. </p>
-					<p>В 1992 г. окончил Санкт-Петербургскую духовную семинарию. </p>
-					<p>В 2010 г. награжден серебряной медалью святого первоверховного апостола Петра I степени. </p>
-					<p>В связи с учреждением 9 сентября 2014 г. Колпинского благочиннического округа, назначен благочинным. </p>
-					<p>В 2017 г. защитил степень магистра в Общецерковной аспирантуре и докторантуре им. святых равноапостольных Кирилла и Мефодия. </p>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<footer class="footer">
-	<div class="container bottom_border">
-        <div class="row">
-           <div class="col-lg-3 col-md-6 col-sm-6 col">
-				<h5 class="headin5_amrc col_white_amrc pt2">Где мы</h5>
-				<!--headin5_amrc-->
-				<p class="mb10">Россия, Санкт-Петербург</p>
-				<p>г. Колпино, ул. Адмиралтейская, д. 42</p>
-				<p>+7 (812) 482-18-22</p>
-				<p>sobor-kolpino@yandex.ru</p>
-				<p>vk.com/svyato_troicki_prihod</p>
-           </div>
-           <div class="col-lg-3 col-md-6 col-sm-6 col">
-				<h5 class="headin5_amrc col_white_amrc pt2">Службы</h5>
-				<!--headin5_amrc ends here-->
-				<ul class="footer_ul2_amrc">
-					<li>
-						<p>
-							<b>Воскресенье и праздники:</b><br>
-							Божественная литургия в 7:00<br>
-							Божественная литургия в 10:00
-						</p>
-					</li>
-					<li>
-						<p>
-							<b>Суббота:</b><br>
-							Божественная литургия в 10:00
-						</p>
-					</li>
-					<li>
-						<p>
-							<b>Будние дни:</b><br>
-							Божественная литургия в 9:00
-						</p>
-					</li>
-					<li>
-						<p>Подробнее в разделе <a href="schedule.html"><b>Расписание</b></a></p>
-					</li>				</ul>
-				<!--footer_ul2_amrc ends here-->
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<h5 class="headin5_amrc col_white_amrc pt2">Записки online</h5>
-				<!--headin5_amrc-->
-				<ul class="footer_ul2_amrc">
-					<li><p>Вы можете подать записку для поминовения о здравии или об упокоении на сайте.</p></li>
-					<li><p>Специальная форма доступна в разделе <a href="commemoration.html"><b>Подать записку</b></a></p></li>
-				</ul>
-				<!--footer_ul_amrc ends here-->
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 ">
-				<h5 class="headin5_amrc col_white_amrc pt2">Последние публикации</h5>
-				<!--headin5_amrc-->
-				<ul class="footer_ul_amrc">
-					<li class="media">
-						<div class="media-body">
-							<span>30 апреля 2019</span>
-							<p><a href="events/event-1-2.html">Из тьмы к свету</a></p>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-body">
-							<span>24 декабря 2018</span>
-							<p><a href="events/event-1-3.html">Особая комната для особых детей</a></p>
-						</div>
-					</li>
-					<li class="media">
-						<div class="media-body">
-							<span>23 июня 2018</span>
-							<p><a href="events/event-2-1.html">Митрополит Варсонофий совершил Всенощное бдение в Свято-Троицком соборе Колпино</a></p>
-						</div>
-					</li>
-				</ul>
-				<!--footer_ul_amrc ends here-->
-			</div>
-		</div>
-	</div>
-    <div class="container">
-        <div class="footer-logo">
-			<img src="images/logo-bottom-white.png" alt="" />
-		</div>
-        <!--footer_bottom_ul_amrc ends here-->
-        <p class="copyright text-center">
-        	Официальный сайт Свято-Троицкого собора г. Колпино
-        </p>
-        <ul class="social_footer_ul">
-			<li><a href="https://www.instagram.com/troickoe_podvorie/"><img src="images/instagram_small_grey.png" alt="" width="30px" height="30px" /></a></li>
-			<li><a href="https://vk.com/svyato_troicki_prihod"><img src="images/vk_small_grey.png" alt="" width="30px" height="30px" /></a></li>
-        </ul>
-        <!--social_footer_ul ends here-->
-    </div>
-</footer>
-
-
-
-<!-- add Javasscript file from js file -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script type="text/javascript" src='js/main.js'></script>
-
-<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+{% endblock %}
