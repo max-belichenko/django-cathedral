@@ -1,7 +1,4 @@
-from django.conf import settings
 from django.db import models
-from django.utils import timezone
-from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 from PIL import Image
@@ -10,48 +7,6 @@ import io
 
 from date_to_string_rus import date_to_string_rus
 from date_to_day_of_week_rus import date_to_day_of_week_rus
-
-
-INDEX = 'ID'
-ABOUT = 'AB'
-COMMEMORATION = 'CM'
-CONTACTS = 'CN'
-EVENTS = 'EV'
-SCHEDULE = 'SC'
-SECTIONS = [
-    (INDEX, 'Главная страница'),
-    (ABOUT, 'О соборе'),
-    (COMMEMORATION, 'Записки'),
-    (CONTACTS, 'Контакты'),
-    (EVENTS, 'События'),
-    (SCHEDULE, 'Расписание'),
-]
-
-
-# class Article(models.Model):
-#     author = models.ForeignKey(verbose_name='Автор статьи', to=settings.AUTH_USER_MODEL, on_delete=models.SET(get_user_model), blank=False)
-#     create_date = models.DateTimeField(verbose_name='Дата создания', default=timezone.now)
-#     active = models.BooleanField(verbose_name='Отображать статью на сайте', default=True)
-#     order = models.PositiveSmallIntegerField(verbose_name='Индекс сортировки', default=0)
-#
-#     section = models.CharField('Раздел сайта', max_length=2, choices=SECTIONS, default=ABOUT, blank=False)
-#     title = models.CharField('Заголовок статьи', max_length=200, blank=True)
-#     text = models.TextField('Текст статьи', blank=True)
-#     photo = models.ImageField('Исходное изображение', blank=True)
-#     photo_small = models.ImageField('Уменьшенное изображение (ширина 200 px)', blank=True)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     def get_sentinel_user(self):
-#         return get_user_model().objects.get_or_create(username='deleted')[0]
-
-
-# class PhotoCarousel(models.Model):
-#     active = models.BooleanField(verbose_name='Отображать на сайте', default=True)
-#     order = models.PositiveSmallIntegerField(verbose_name='Индекс сортировки', default=0)
-#     section = models.CharField('Раздел сайта', max_length=2, choices=SECTIONS, default=ABOUT, blank=False)
-#     photo = models.ImageField('Изображение', blank=True)
 
 
 class HeaderModel(models.Model):
@@ -63,11 +18,11 @@ class HeaderModel(models.Model):
     created_dt = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     def __str__(self):
-        return self.title
+        return f'[{str(self.created_dt)}] {self.title}'
 
     class Meta:
         verbose_name = 'Главная страница'
-        verbose_name_plural = 'Главная страница'
+        verbose_name_plural = '[0] Главная страница'
         ordering = ['-created_dt']
         get_latest_by = 'created_dt'
 
@@ -81,8 +36,8 @@ class PhotoSliderModel(models.Model):
         return str(self.photo)
 
     class Meta:
-        verbose_name = 'О соборе :: Фото-слайдер'
-        verbose_name_plural = 'О соборе :: Фото-слайдер'
+        verbose_name = 'О соборе / Фото-слайдер'
+        verbose_name_plural = '[1] О соборе / Фото-слайдер'
 
 
 class ScheduleModel(models.Model):
@@ -98,7 +53,7 @@ class ScheduleModel(models.Model):
 
     class Meta:
         verbose_name = 'Расписание'
-        verbose_name_plural = 'Расписание'
+        verbose_name_plural = '[4] Расписание'
 
 
 class ScheduleEventsModel(models.Model):
@@ -125,8 +80,8 @@ class ArticleModel(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'О соборе :: Статья'
-        verbose_name_plural = 'О соборе :: Статьи'
+        verbose_name = 'О соборе / Статья'
+        verbose_name_plural = '[1] О соборе / Статьи'
         ordering = ['created_dt']
 
 
@@ -144,8 +99,8 @@ class ParagraphModel(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'О соборе :: Статья :: Параграф'
-        verbose_name_plural = 'О соборе :: Статья :: Параграфы'
+        verbose_name = 'О соборе / Статья / Параграф'
+        verbose_name_plural = 'О соборе / Статья / Параграфы'
 
 
 class ServiceNameModel(models.Model):
@@ -178,11 +133,11 @@ class NoteModel(models.Model):
     delivery_dt = models.DateTimeField(editable=False, verbose_name='Дата доставки записки по e-mail', blank=True, null=True)
 
     def __str__(self):
-        return str(self.pk)
+        return f'[{str(self.pk)}] {self.created_dt}'
 
     class Meta:
         verbose_name = 'Записка о поминовении'
-        verbose_name_plural = 'Записки о поминовении'
+        verbose_name_plural = '[2] Записки о поминовении'
 
 
 class NoteNamesModel(models.Model):
@@ -222,7 +177,7 @@ class ContactModel(models.Model):
 
     class Meta:
         verbose_name = 'Контакт'
-        verbose_name_plural = 'Контакты'
+        verbose_name_plural = '[5] Контакты'
         ordering = ['pk']
 
 
@@ -248,7 +203,7 @@ class EventsModel(models.Model):
 
     class Meta:
         verbose_name = 'Событие'
-        verbose_name_plural = 'События'
+        verbose_name_plural = '[3] События'
 
 
 class EventParagraphModel(models.Model):

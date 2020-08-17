@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block nav-commemoration %}<li class="nav-item active"><a class="nav-link " href="/commemoration">Подать записку</a></li>{% endblock %}
+
+
+{% block content %}
+<div class="memorial" id="memorial">
+    <div class="container">
+        <h1 class="text-center">Записки о поминовении</h1>
+        <h3 class="text-center">Ваша записка была отправлена!</h3>
+        <div class="row text-center my-5">
+            <div class="col-md-6 col-sm-12">
+                <a class="btn btn-primary mx-2 my-2" href="{% url 'commemoration' %}" role="button" style="min-width: 350px; ">Подать ещё одну записку</a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a class="btn btn-info mx-2 my-2" href="{% url 'index' %}" role="button" style="min-width: 350px; ">Вернуться на главную страницу</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

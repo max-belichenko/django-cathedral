@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib import admin
-# from django.db import models
 from django.utils.safestring import mark_safe
 
 from .models import *
@@ -23,6 +22,19 @@ class HeaderModelAdmin(admin.ModelAdmin):
     get_image.short_description = 'Изображение фона'
 
 
+@admin.register(PhotoSliderModel)
+class PhotoSliderAdmin(admin.ModelAdmin):
+    list_display = ('get_image', 'description', 'is_active')
+    list_display_links = ('get_image', )
+    list_editable = ('description', 'is_active', )
+
+    def get_image(self, obj):
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width="150">')
+
+    get_image.short_description = 'Фотография'
+
+
 class ScheduleEventsForm(forms.ModelForm):
     class Meta:
         model = ScheduleEventsModel
@@ -42,19 +54,6 @@ class ScheduleEventInline(admin.TabularInline):
 @admin.register(ScheduleModel)
 class ScheduleModelAdmin(admin.ModelAdmin):
     inlines = [ScheduleEventInline, ]
-
-
-@admin.register(PhotoSliderModel)
-class PhotoSliderAdmin(admin.ModelAdmin):
-    list_display = ('get_image', 'description', 'is_active')
-    list_display_links = ('get_image', )
-    list_editable = ('description', 'is_active', )
-
-    def get_image(self, obj):
-        if obj.photo:
-            return mark_safe(f'<img src="{obj.photo.url}" width="150">')
-
-    get_image.short_description = 'Фотография'
 
 
 class ParagraphForm(forms.ModelForm):
@@ -114,7 +113,6 @@ class EventPhotoForm(forms.ModelForm):
         }
 
 
-
 class EventPhotoInline(admin.TabularInline):
     model = EventPhotoModel
     form = EventPhotoForm
@@ -143,3 +141,29 @@ class EventsModelAdmin(admin.ModelAdmin):
                            attrs={'rows': 3,
                                   'cols': 80})},
     }
+
+
+class NoteNamesForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super(NoteNamesForm, self).__init__(*args, **kwargs)
+        self.fields['type'].disabled = True
+        self.fields['name'].disabled = True
+
+    class Meta:
+        model = NoteNamesModel
+        fields = ['type', 'name', ]
+
+
+class NoteNamesInline(admin.TabularInline):
+    model = NoteNamesModel
+    form = NoteNamesForm
+    extra = 0
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+@admin.register(NoteModel)
+class NoteModelAdmin(admin.ModelAdmin):
+    inlines = [NoteNamesInline, ]
+    readonly_fields = ('service_name', 'service_duration', 'created_dt', 'delivery_dt')

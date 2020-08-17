@@ -123,3 +123,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = '/media/'
+
+
+# Mail settings
+
+EMAIL_HOST = 'smtp.mail.ru'                 # Сервер отправки сообщений
+EMAIL_HOST_USER = 'username@mail.ru'        # имя пользователя
+EMAIL_HOST_PASSWORD = 'password'            # пароль
+EMAIL_PORT = 465                            # порт для подключения
+EMAIL_USE_SSL = True                        # использование протокола шифрования
+DEFAULT_FROM_EMAIL = 'username@mail.ru'     # email, с которого будет отправлено письмо
+DEFAULT_TO_EMAIL = 'admin@mail.ru'          # email, на который будет отправлено письмо
