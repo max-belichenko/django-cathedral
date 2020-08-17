@@ -49,7 +49,19 @@
 			<span class="carousel-control-next-icon" aria-hidden="true"></span>
 			<span class="sr-only">Следующая фотография</span>
 		</a>
-
+	</div>
+</header>
+<header class="about">
+	<div class="container">
+		{% if articles %}
+		<ul class="nav justify-content-center">
+			{% for article in articles %}
+			<li class="nav-item">
+				<a class="nav-link" href="#{{ article.pk }}">{{ article.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
 	</div>
 </header>
 {% endblock %}
@@ -59,6 +71,7 @@
 <div class="about">
 	<div class="container">
 		{% for article in articles %}
+		<a name="{{ article.pk }}"></a>
 			{% if article.title %}
 				<h1 class="text-center">{{ article.title }}</h1>
 			{% endif %}

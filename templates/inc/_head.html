@@ -57,4 +57,29 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/62280157" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
 
+        <!-- Функция добавления строки ввода в форме -->
+        <script type="text/javascript" >
+        function insertAfter(parent, node, referenceNode) {
+                parent.insertBefore(node, referenceNode.nextSibling);
+        }
+
+        function add_line(){
+                var object = document.getElementById("health_names");
+                var new_field = document.createElement("input");    // создаем новое поле ввода
+                new_field.setAttribute("type", "text"); // установим для поля ввода тип данных 'text'
+                new_field.setAttribute("class", "form-control mb-2");
+                new_field.setAttribute("name", "health_field[]"); // установим имя для поля ввода
+                var pos = object.childElementCount;  // определим место вствки нового поля ввода (перед каким элементом его вставить)
+                insertAfter(object, new_field, object.childNodes[pos]);
+
+                var object = document.getElementById("repose_names");
+                var new_field = document.createElement("input");    // создаем новое поле ввода
+                new_field.setAttribute("type", "text"); // установим для поля ввода тип данных 'text'
+                new_field.setAttribute("class", "form-control mb-2");
+                new_field.setAttribute("name", "repose_field[]"); // установим имя для поля ввода
+                var pos = object.childElementCount;  // определим место вствки нового поля ввода (перед каким элементом его вставить)
+                insertAfter(object, new_field, object.childNodes[pos]);
+        }
+        </script>
+
         <title>Свято-Троицкий cобор города Колпино</title>

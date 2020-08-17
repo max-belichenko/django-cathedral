@@ -1,12 +1,14 @@
+from django.core.exceptions import ValidationError
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
+from django.urls import reverse
 
 from datetime import date, timedelta
 
 from MyApp.models import *
-from MyApp.forms import CommemorationForm
+from MyApp.forms import *
 
 
 class MainView(TemplateView):
@@ -99,13 +101,69 @@ def event_view(request, pk):
 #     return render(request, 'MyApp/about.html', {'article': article})
 
 
-def commemoration(request):
-    if request.method == 'POST':
-        pass
-    else:
-        form = CommemorationForm()
+    # def commemoration(request):
+    #     if request.method == 'POST':
+    #         pass
+    #     else:
+    #         form = CommemorationForm()
+    #
+    #     return render(request, 'MyApp/commemoration.html', {'form': form})
 
-    return render(request, 'MyApp/commemoration.html', {'form': form})
+
+def commemoration(request):
+    note = NoteModel()
+    health_prefix = 'health'
+    repose_prefix = 'repose'
+
+    if request.method == 'POST':
+        note_form = NoteForm(data=request.POST, instance=note)
+
+        if note_form.is_valid():
+            note_instance = note_form.save()
+
+            health_formset = NoteNamesFormSet(
+                data=request.POST,
+                files=request.FILES,
+                prefix='health',
+                instance=note_instance,
+            )
+
+            repose_formset = NoteNamesFormSet(
+                data=request.POST,
+                files=request.FILES,
+                prefix='repose',
+                instance=note_instance,
+            )
+
+            if health_formset.is_valid():
+                for form in health_formset.forms:
+                    form.instance.type = NoteNamesModel.HEALTH
+                health_formset.save()
+            else:
+                raise ValidationError(health_formset.errors)
+            if repose_formset.is_valid():
+                for form in repose_formset.forms:
+                    form.instance.type = NoteNamesModel.REPOSE
+                repose_formset.save()
+            else:
+                raise ValidationError(repose_formset.errors)
+
+        else:
+            raise ValidationError(note_form.errors)
+
+        return HttpResponseRedirect(reverse('index'))
+    else:
+        context = {
+            'note_form': NoteForm(instance=note),
+            'health_formset': NoteNamesFormSet(prefix=health_prefix, instance=note),
+            'repose_formset': NoteNamesFormSet(prefix=repose_prefix, instance=note)
+        }
+
+    return render(request, template_name="MyApp/test.html", context=context)
+
+
+
+
 
 
 # def contacts(request):

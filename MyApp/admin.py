@@ -1,16 +1,9 @@
 from django import forms
 from django.contrib import admin
-from django.db import models
+# from django.db import models
 from django.utils.safestring import mark_safe
 
-from .models import (
-    HeaderModel, PhotoSliderModel,
-    ScheduleModel, ScheduleEventsModel,
-    ArticleModel, ParagraphModel,
-    ServiceNameModel, ServiceDurationModel, NoteModel, NoteNamesModel,
-    ContactModel,
-    EventsModel, EventParagraphModel, EventPhotoModel
-)
+from .models import *
 
 
 admin.site.site_title = 'Управление сайтом Свято-Троицкого собора'

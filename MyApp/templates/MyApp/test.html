@@ -13,10 +13,7 @@
             <div class="col-lg-3 col-md-2 col-sm-0"></div>
             <div class="col-lg-6 col-md-8 col-sm-12">
 
-
-
-                <form action="{% url 'comm_payment' %}" method="post">
-
+                <form method="post">
                     {% csrf_token %}
 
                     <div class="invalid-feedback">
@@ -24,15 +21,14 @@
                     </div>
 
                     <div class="form-row mb-5">
-
                         <div class="col">
                             <div class="form-group">
                                 <label for="{{ form.service.id_for_label }}"><h4>Служба</h4></label>
                                 <div class="invalid-feedback">
-                                    {{ form.service.errors }}
+                                    {{ note_form.service_name.errors }}
                                 </div>
 
-                                {% for radio in form.service %}
+                                {% for radio in note_form.service_name %}
                                 <div class="form-check">
                                     {{ radio.tag }}
                                     <label class="form-check-label" for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
@@ -46,10 +42,10 @@
                             <div class="form-group">
                                 <label for="{{ form.duration.id_for_label }}"><h4>Продолжительность</h4></label>
                                 <div class="invalid-feedback">
-                                    {{ form.duration.errors }}
+                                    {{ note_form.service_duration.errors }}
                                 </div>
 
-                                {% for radio in form.duration %}
+                                {% for radio in note_form.service_duration %}
                                 <div class="form-check">
                                     {{ radio.tag }}
                                     <label class="form-check-label" for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
@@ -58,33 +54,34 @@
 
                             </div>
                         </div>
-
-
                     </div>
-
 
                     <div class="alert alert-info" role="alert">
                         <h4 class="text-center">Имена для поминовения</h4>
                         <hr>
                         <p>В записке на Сорокоуст продолжительностью 40 дней и более необходимо указать <b>Имя и Фамилию</b>.</p>
+
                     </div>
 
                     <div class="form-row mb-5">
                         <div class="col" id="health_names">
                             <div class="form-group">
+                                <p>{{ health_formset.management_form }}</p>
                                 <label for="col_1"><h5>О здравии</h5></label>
-                                <input type="text" class="form-control mb-2" id="col_1" name="health_field[]">
-                                <input type="text" class="form-control mb-2" name="health_field[]">
-                                <input type="text" class="form-control mb-2" name="health_field[]">
+                                {% for form in health_formset %}
+                                {{ form.type }}
+                                {{ form.name }}
+                                {% endfor %}
                             </div>
-                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="add_line()">+ Добавить строку</button>
                         </div>
                         <div class="col" id="repose_names">
                             <div class="form-group">
+                                <p>{{ repose_formset.management_form }}</p>
                                 <label for="col_2"><h5>Об упокоении</h5></label>
-                                <input type="text" class="form-control mb-2" id="col_2" name="repose_field[]">
-                                <input type="text" class="form-control mb-2" name="repose_field[]">
-                                <input type="text" class="form-control mb-2" name="repose_field[]">
+                                {% for form in repose_formset %}
+                                {{ form.type }}
+                                {{ form.name }}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -98,16 +95,10 @@
 
                         </button>
                     </div>
-
                 </form>
 
-
-
-
             </div>
-            <div class="col-lg-3 col-md-2 col-sm-0"></div>
         </div>
-
     </div>
 </div>
 

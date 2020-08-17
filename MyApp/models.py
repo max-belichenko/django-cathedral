@@ -174,8 +174,8 @@ class NoteModel(models.Model):
     service_name = models.ForeignKey(to=ServiceNameModel, on_delete=models.PROTECT)
     service_duration = models.ForeignKey(to=ServiceDurationModel, on_delete=models.PROTECT)
     created_dt = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания записки')
-    pay_dt = models.DateTimeField(editable=False, verbose_name='Дата оплаты', blank=True)
-    delivery_dt = models.DateTimeField(editable=False, verbose_name='Дата доставки записки по e-mail', blank=True)
+    pay_dt = models.DateTimeField(editable=False, verbose_name='Дата оплаты', blank=True, null=True)
+    delivery_dt = models.DateTimeField(editable=False, verbose_name='Дата доставки записки по e-mail', blank=True, null=True)
 
     def __str__(self):
         return str(self.pk)
